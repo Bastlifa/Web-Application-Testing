@@ -8,12 +8,12 @@ describe("<Display />", () =>
 {
     it('Should render without crashing', () => 
     {
-        rtl.render(<Display />)
+        rtl.render(<Display atBat={{hits:0, fouls:0, balls:2, strikes:1}}/>)
     })
     it('Should display the number of balls and strikes', () =>
     {
-        let wrapper = rtl.render(<Display balls={2} strikes={1} />)
+        let wrapper = rtl.render(<Display atBat={{hits:0, fouls:0, balls:2, strikes:1}} />)
         expect(wrapper.getByTestId("balls")).toHaveTextContent("2")
-        expect(wrapper.getByTestId("strikes")).toHaveTextContent("2")
+        expect(wrapper.getByTestId("strikes")).toHaveTextContent("1")
     })
 })

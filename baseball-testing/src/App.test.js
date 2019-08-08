@@ -8,9 +8,4 @@ it('renders without crashing', () => {
   rtl.render(<App />)
 });
 
-it('renders a span with the text Hello World', () =>
-{
-  const wrapper = rtl.render(
-    <App/>
-  )
-})
+
