@@ -1,9 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import * as rtl from '@testing-library/react'
+import "@testing-library/react/cleanup-after-each"
 import App from './App';
+// import '@testing-library/utils/jest-dom/extend-expect'
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  rtl.render(<App />)
 });
+
+it('renders a span with the text Hello World', () =>
+{
+  const wrapper = rtl.render(
+    <App/>
+  )
+})
